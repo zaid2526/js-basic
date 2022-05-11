@@ -105,3 +105,30 @@ while(i<todos.length){
     i++;
 
 }
+
+todos.forEach(function(todo){
+    console.log(todo.text)
+});
+
+//map  return an array of elements
+const todosText=todos.map(function(todo){
+    return todo.text;
+});
+console.log(todosText);
+
+//filter() return an array of object when condtion is true.
+
+/*const todoCompleted=todos.filter(function(todo){
+    return todo.isCompeletd===true;
+})
+console.log(todoCompleted);
+*/
+// it return array of object , so now we can 
+// apply object methode again like map...
+
+const todoCompleted=todos.filter(function(todo){
+    return todo.isCompeletd===true;
+}).map(function(todo){
+    return todo.text;
+})
+console.log(todoCompleted);
